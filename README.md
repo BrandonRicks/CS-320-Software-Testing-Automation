@@ -167,9 +167,15 @@ As mentioned by Calikli et al. (2010), it is important to consider failures as m
   
 References:
 Bentley, J. L. (1981). Writing Efficient Code. CARNEGIE-MELLON UNIV PITTSBURGH PA DEPT OF COMPUTER SCIENCE.
+
 Calikli, G., Aslan, B., & Bener, A. (2010). Confirmation Bias in Software Development and Testing: An Analysis of the Effects of Company Size, Experience and Reasoning Skills - Open Research Online. Open.ac.uk. https://doi.org/http://oro.open.ac.uk/45370/1/PPIG2010.pdf 
+
 Farias, H. (2018, July 2). Where you should never cut corners in software development. InfoWorld. https://www.infoworld.com/article/3286265/where-you-should-never-cut-corners-in-software-development.html 
+
 Hambling, Brian Morgan, Peter Samaroo, Angelina Thompson, Geoff Williams, Peter. (2015). Software Testing - An ISTQB-BCS Certified Tester Foundation Guide (3rd Edition) - 4.5.1.3 Other Partitions. (pp. 87,88). BCS The Chartered Institute for IT. Retrieved from https://app.knovel.com/hotlink/pdf/id:kt00UC2J6V/software-testing-an-istqb/other-partitions 
+
 O’Dell, D. H. (2017). The Debugging Mindset: Understanding the psychology of learning strategies leads to effective problem-solving skills.: Queue: Vol 15, No 1. Queue. Retrieved from https://dl.acm.org/doi/10.1145/3055301.3068754 
+
 Rungta, K. (2020). Software Testing Techniques with Test Case Design Examples. Guru99.com; Guru99. Retrieved from https://www.guru99.com/software-testing-techniques.html 
+
 Testing Code Coverage in Eclipse. (n.d.). Cornell. Retrieved May 30, 2021, from https://www.cs.cornell.edu/courses/JavaAndDS/files/codeCoverage.pdf
