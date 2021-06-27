@@ -14,13 +14,13 @@ Summary
 Unit Testing Approach
 	The software requirements were outlined beforehand, and stated what should happen when certain criteria or circumstances took place. In contact submission, “The contact object shall have a required firstName String field that cannot be longer than 10 characters. The firstName field shall not be null” is an example of a given requirement. This requirement was met with the code:
   
-            if (firstName == null || firstName.isEmpty()) {
+        if (firstName == null || firstName.isEmpty()) {
 		this.firstName = "NULL"
-            else if (firstName.length() > 10) {
+        else if (firstName.length() > 10) {
 		this.firstName = firstName.substring(0, 10
 	else {
 		this.firstName = firstName;
-            }
+        }
 
 This example shows how the requirements given and the code align, and when tested, this requirement is met with both a test for the null and for the length:
 
@@ -33,6 +33,7 @@ This example shows how the requirements given and the code align, and when teste
 		}
 	}
 		}
+		
             @Test
 	@DisplayName("Contact First Name shall not be null")
 	void testContactFirstNameNotNull() {
@@ -45,44 +46,44 @@ Each test runs through JUnit, and either completes, has an error, or a test fail
 Experience Writing JUnit Tests
 	 I believe to be technically sound is to be skillful in making sure your code is both practical and effective. Easy to read formatting, commenting, and keeping code clean and simple are good ways to make create technically sound code. I believe it is also important to comment code in order to properly explain what the code does to others, such as explaining what is expected in constructors, or segregating portions of code for ease of use and readability. An example of this could be the top portion of Task.java, where the constructors for the ID, name, and description are, prior to the getters, as well as the explanation of how IDs are generated:
    
-public class Task {
-	private final String taskID;
-	private String taskName;
-	private String taskDesc;
-	private static AtomicLong idGenerator = new AtomicLong();
-	
-	// CONSTRUCTORS
-	/*
-	 * Constructor takes task ID, task name, and task description as parameters. 
-	 * All parameters are checked if null or empty. If either exists, the field is filled
-	 * with the phrase "NULL" to protect data integrity as a placeholder. Task ID is truncated 
-	 * to a maximum of 10 characters, task name to 20 characters, and description to 50 characters.
-	 * 
-	 */
-	public Task(String taskName, String taskDesc) {
-		
-		// TASKID
-		// Task ID is generated when the constructor is called. It is set as a final variable and has
-		// no other getter or setter so there should be no way to change it.
-		// The idGenerator is static to prevent duplicates across all tasks.
-		this.taskID = String.valueOf(idGenerator.getAndIncrement());
-		
-		if (taskName == null || taskName.isEmpty()) {
-			this.taskName = "NULL";
-		} else if (taskName.length() > 20) {
-			this.taskName = taskName.substring(0, 20);
-		} else {
-			this.taskName = taskName;
+	public class Task {
+		private final String taskID;
+		private String taskName;
+		private String taskDesc;
+		private static AtomicLong idGenerator = new AtomicLong();
+
+		// CONSTRUCTORS
+		/*
+		 * Constructor takes task ID, task name, and task description as parameters. 
+		 * All parameters are checked if null or empty. If either exists, the field is filled
+		 * with the phrase "NULL" to protect data integrity as a placeholder. Task ID is truncated 
+		 * to a maximum of 10 characters, task name to 20 characters, and description to 50 characters.
+		 * 
+		 */
+		public Task(String taskName, String taskDesc) {
+
+			// TASKID
+			// Task ID is generated when the constructor is called. It is set as a final variable and has
+			// no other getter or setter so there should be no way to change it.
+			// The idGenerator is static to prevent duplicates across all tasks.
+			this.taskID = String.valueOf(idGenerator.getAndIncrement());
+
+			if (taskName == null || taskName.isEmpty()) {
+				this.taskName = "NULL";
+			} else if (taskName.length() > 20) {
+				this.taskName = taskName.substring(0, 20);
+			} else {
+				this.taskName = taskName;
+			}
+
+			if (taskDesc == null || taskDesc.isEmpty()) {
+				this.taskDesc = "NULL";
+			} else if (taskDesc.length() > 50) {
+				this.taskDesc = taskDesc.substring(0, 50);
+			} else {
+				this.taskDesc = taskDesc;
+			}
 		}
-		
-		if (taskDesc == null || taskDesc.isEmpty()) {
-			this.taskDesc = "NULL";
-		} else if (taskDesc.length() > 50) {
-			this.taskDesc = taskDesc.substring(0, 50);
-		} else {
-			this.taskDesc = taskDesc;
-		}
-	}
 
 This code keeps things simple and neat, effective at meeting its requirements, but not excessive either. The structure of the code is kept neat as well, which is useful if others need to add or modify code in the future.
   As another example, this code is meant to update a task name, using the task ID. This task IDs are kept in an array and automatically assigned an ID, so as to not create duplicates. This code gets the requested task with its ID, and then sets the name and updates this String. If it is not found, it notifies this result in the console:
@@ -101,7 +102,7 @@ This code keeps things simple and neat, effective at meeting its requirements, b
   
 This code does a good job of meeting the requirements needed, while also accounting for possible issues, should the input not be a valid one. This is enhanced by the requirements regarding the maximum length of the name in another portion of code within Task.class:
 
-                           if (taskName == null || taskName.isEmpty()) {
+                if (taskName == null || taskName.isEmpty()) {
 			this.taskName = "NULL";
 		} else if (taskName.length() > 20) {
 			this.taskName = taskName.substring(0, 20);
@@ -124,7 +125,7 @@ Objects in each milestone are tested individually to ensure that code functional
 		} else {
 			this.appointmentDesc = appointmentDesc;
 		}
-      }
+	}
 
 This example shows the limit of the description to be a length of 50, after which all other characters will be cut off. EP testing can often be combined with Boundary Value analysis to test within a specified limit, but also test between extreme ends (Rungta, 2020).
 	There were a few software testing techniques that were not used in milestones as well. Decision Table testing is one such technique, which is primarily used to define functions and the conditions that those functions will operate, as well as any actions that take place, through testing combinations (Hambling et al, 2015). Another example of a technique that was not used during the milestones would be State Transition testing. This technique has a tester test behavior of an Application Under Test, or AUT  (Rungta, 2020).
