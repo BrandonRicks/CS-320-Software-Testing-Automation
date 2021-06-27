@@ -87,7 +87,7 @@ public class Task {
 This code keeps things simple and neat, effective at meeting its requirements, but not excessive either. The structure of the code is kept neat as well, which is useful if others need to add or modify code in the future.
   As another example, this code is meant to update a task name, using the task ID. This task IDs are kept in an array and automatically assigned an ID, so as to not create duplicates. This code gets the requested task with its ID, and then sets the name and updates this String. If it is not found, it notifies this result in the console:
 	
-  public void updateTaskName(String updatedString, String taskID) {
+	public void updateTaskName(String updatedString, String taskID) {
 		for (int counter = 0; counter < taskList.size(); counter++) {
 			if (taskList.get(counter).getTaskID().equals(taskID)) {
 				taskList.get(counter).setTaskName(updatedString);
@@ -100,6 +100,7 @@ This code keeps things simple and neat, effective at meeting its requirements, b
 	}
   
 This code does a good job of meeting the requirements needed, while also accounting for possible issues, should the input not be a valid one. This is enhanced by the requirements regarding the maximum length of the name in another portion of code within Task.class:
+
                            if (taskName == null || taskName.isEmpty()) {
 			this.taskName = "NULL";
 		} else if (taskName.length() > 20) {
@@ -114,6 +115,7 @@ Reflection
 
 Testing Techniques
 Objects in each milestone are tested individually to ensure that code functionality exists and works as intended. The results are then displayed in both the console for testing purposes, and shown in JUnit as a pass, fail, or error. An example of a type of test technique used in the milestones would be Equivalence Partition technique. This technique can be used to check that the input condition is within a certain range (Hambling et al, 2015, pg. 87,88). For example, the appointment description character limit of 50:
+
 	public void setAppointmentDesc(String appointmentDesc) {
 		if (appointmentDesc == null || appointmentDesc.isEmpty()) {
 			this.appointmentDesc = "NULL";
