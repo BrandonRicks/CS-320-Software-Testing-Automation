@@ -166,6 +166,7 @@ As mentioned by Calikli et al. (2010), it is important to consider failures as m
   
   
 References:
+
 Bentley, J. L. (1981). Writing Efficient Code. CARNEGIE-MELLON UNIV PITTSBURGH PA DEPT OF COMPUTER SCIENCE.
 
 Calikli, G., Aslan, B., & Bener, A. (2010). Confirmation Bias in Software Development and Testing: An Analysis of the Effects of Company Size, Experience and Reasoning Skills - Open Research Online. Open.ac.uk. https://doi.org/http://oro.open.ac.uk/45370/1/PPIG2010.pdf 
