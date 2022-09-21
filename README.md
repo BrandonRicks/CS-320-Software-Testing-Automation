@@ -139,7 +139,7 @@ if (taskName == null \|\| taskName.isEmpty()) {
 
 Efficiency with code is typically in relation to resource use, and efficient code will use less resources for its purpose than inefficient code (Bentley, 1981). As an example of efficiency on the tests coded and ran, code execution and test completion are measured in the hundredths or thousandths of a second, which is a good indication of efficient code:
 
-![image](https://user-images.githubusercontent.com/79807877/191574745-7dad96dc-b727-460b-a532-dfe195f837fb.png)
+<img src = "https://user-images.githubusercontent.com/79807877/191574745-7dad96dc-b727-460b-a532-dfe195f837fb.png" width="350" height="350" />
 
 # Reflection
 
