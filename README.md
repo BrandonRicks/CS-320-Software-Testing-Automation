@@ -91,17 +91,17 @@ public class Task {
 
         this.taskID = String.*valueOf*(*idGenerator*.getAndIncrement());
             
-        if (taskName == null \|\| taskName.isEmpty()) {
+        if (taskName == null || taskName.isEmpty()) {
             this.taskName = "NULL";
-        } else if (taskName.length() \> 20) {
+        } else if (taskName.length() > 20) {
             this.taskName = taskName.substring(0, 20);
         } else {
             this.taskName = taskName;
         }
             
-        if (taskDesc == null \|\| taskDesc.isEmpty()) {
+        if (taskDesc == null || taskDesc.isEmpty()) {
             this.taskDesc = "NULL";
-        } else if (taskDesc.length() \> 50) {
+        } else if (taskDesc.length() > 50) {
             this.taskDesc = taskDesc.substring(0, 50);
         } else {
             this.taskDesc = taskDesc;
@@ -114,7 +114,7 @@ This code keeps things simple and neat, effective at meeting its requirements, b
 As another example, this code is meant to update a task name, using the task ID. This task IDs are kept in an array and automatically assigned an ID, so as to not create duplicates. This code gets the requested task with its ID, and then sets the name and updates this String. If it is not found, it notifies this result in the console:
 ```
 public void updateTaskName(String updatedString, String taskID) {
-    for (int counter = 0; counter \< taskList.size(); counter++) {
+    for (int counter = 0; counter < taskList.size(); counter++) {
         if (taskList.get(counter).getTaskID().equals(taskID)) {
             taskList.get(counter).setTaskName(updatedString);
             break;
@@ -128,9 +128,9 @@ public void updateTaskName(String updatedString, String taskID) {
 
 This code does a good job of meeting the requirements needed, while also accounting for possible issues, should the input not be a valid one. This is enhanced by the requirements regarding the maximum length of the name in another portion of code within Task.class:
 ```
-if (taskName == null \|\| taskName.isEmpty()) {
+if (taskName == null || taskName.isEmpty()) {
     this.taskName = "NULL";
-} else if (taskName.length() \> 20) {
+} else if (taskName.length() > 20) {
     this.taskName = taskName.substring(0, 20);
 } else {
     this.taskName = taskName;
@@ -148,9 +148,9 @@ Efficiency with code is typically in relation to resource use, and efficient cod
 Objects in each milestone are tested individually to ensure that code functionality exists and works as intended. The results are then displayed in both the console for testing purposes, and shown in JUnit as a pass, fail, or error. An example of a type of test technique used in the milestones would be Equivalence Partition technique. This technique can be used to check that the input condition is within a certain range (Hambling et al, 2015, pg. 87,88). For example, the appointment description character limit of 50:
 ```
 public void setAppointmentDesc(String appointmentDesc) {
-    if (appointmentDesc == null \|\| appointmentDesc.isEmpty()) {
+    if (appointmentDesc == null || appointmentDesc.isEmpty()) {
         this.appointmentDesc = "NULL";
-    } else if (appointmentDesc.length() \> 50) {
+    } else if (appointmentDesc.length() > 50) {
         this.appointmentDesc = appointmentDesc.substring(0, 50);
     } else {
         this.appointmentDesc = appointmentDesc;
@@ -176,10 +176,10 @@ According to O’Dell (2017), much of a software developer’s time, 35 to 50 pe
 
 It is important to approach testing with as much importance and efficiency as coding. Approaching debugging as a problem solving exercise can be valuable as an effective learning strategy (O’Dell, 2017), and approaching testing in a similar mindset can do the same. Tests connect directly to their code, and all work together to reach the requirements needed. An example of this would be the connection between a string of a first name in contact required to be a certain number of characters, the code implementing this, and the test for this code ensuring it works effectively to meet these requirements. The code for first name in Contact.java is as follows:
 ```
-if (firstName == null \|\| firstName.isEmpty()) {
+if (firstName == null || firstName.isEmpty()) {
     this.firstName = "NULL";
 // If first name is longer than 10 characters, just grab the first 10 characters
-} else if (firstName.length() \> 10) {
+} else if (firstName.length() > 10) {
     this.firstName = firstName.substring(0, 10);
 } else {
     this.firstName = firstName;
@@ -193,7 +193,7 @@ This code is then tested to ensure it functions, which will meet the requirement
 
 void testContactFirstNameWithMoreThanTenCharacters() {
     Contact contact = new Contact("OllyOllyOxenFree", "LastName", "PhoneNumbr", "Address");
-    if (contact.getFirstName().length() \> 10) {
+    if (contact.getFirstName().length() > 10) {
         *fail*("First Name has more than 10 characters.");
     }
 }
